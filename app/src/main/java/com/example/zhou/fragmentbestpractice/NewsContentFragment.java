@@ -20,6 +20,13 @@ public class NewsContentFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.news_content_frag, container,false);
+        view.findViewById(R.id.news_title).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                MainActivity activity = (MainActivity) getActivity();
+                activity.replaceFragment(new TestFragment());
+            }
+        });
         return view;
     }
 
